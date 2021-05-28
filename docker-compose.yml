@@ -1,0 +1,14 @@
+version: '2.1'
+services:
+  poc:
+    build: .
+    privileged: true
+    volumes:
+      - ./:/poc
+    command:
+      - /bin/bash
+      - -c
+      - |
+        cd /poc && make
+        cd /poc/examples && make
+        cd /poc
